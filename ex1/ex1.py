@@ -23,8 +23,8 @@ X=np.c_[np.mat(np.ones(m)).T,X]
 print(X.shape)
 theta=np.mat(np.zeros(2))
 theta.shape=-1,1
-iterations = 15000;
-alpha = 0.001;
+iterations = 1500;
+alpha = 0.01;
 J = computeCost(X, Y, theta)
 print('With theta = [0 ; 0]\nCost computed = %s\n'%float(J))
 print('Expected cost value (approx) 32.07\n')

@@ -27,10 +27,12 @@ m=len(X)
 X=np.c_[np.ones((len(X),1)),X]
 print(X)
 alpha = 0.01
-num_iters = 1500
+num_iters = 400
 theta = np.mat(np.zeros((3,1)))
 [theta, J_history] = gradientDescentMulti(X, Y, theta, alpha, num_iters)
 print(theta)
+cost=computeCost(X,Y,theta)
+print(cost)
 plt.plot(J_history,color = 'b')
 plt.xlabel('iters')
 plt.ylabel('j_cost')
@@ -40,11 +42,11 @@ predict=[1650,3]
 predict=(predict-mu)/sigma
 pre_X=np.c_[1,predict]
 pre_Y=pre_X*theta
-print(pre_Y)
 theta=Leastsquare(X,Y)
 print(theta)
+cost=computeCost(X,Y,theta)
+print(cost)
 predict=[1650,3]
 predict=(predict-mu)/sigma
 pre_X=np.c_[1,predict]
 pre_Y=pre_X*theta
-print(pre_Y)
